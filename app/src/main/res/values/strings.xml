@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Log In</string>
     <string name="action_settings">Settings</string>
-    <string name="log_in">Login w FB</string>
+    <string name="log_in">Login with FB</string>
     <string name="hello">Annyeonghaseyo Yeobo!</string>
 
     <string name="facebook_app_id">1550448545248656</string>

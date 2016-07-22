@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -25,7 +26,6 @@ public class MainActivityFragment extends Fragment {
     private TextView mTextDetails;
     private CallbackManager mCallbackManager;
 
-
     private FacebookCallback<LoginResult> mCallback = new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
@@ -33,17 +33,20 @@ public class MainActivityFragment extends Fragment {
             AccessToken accessToken = loginResult.getAccessToken();
             Profile profile = Profile.getCurrentProfile();
 
-                mTextDetails.setText("Welcome " + profile.getName());
+            Toast.makeText(getActivity(), "Congratulations you are now logged in with Facebook",
+                    Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onCancel() {
-
+            Toast.makeText(getActivity(), "You CANCELLED it!",
+                    Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onError(FacebookException error) {
-
+            Toast.makeText(getActivity(), "There's something in your account bro!",
+                    Toast.LENGTH_SHORT).show();
         }
     };
 
